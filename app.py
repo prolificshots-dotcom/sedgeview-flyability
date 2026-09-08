@@ -59,7 +59,7 @@ def get_live_pws(station_id):
 # --- FORECAST RETRIEVAL ---
 @st.cache_data(ttl=1800)
 def get_forecast(lat, lon):
-     url = f"https://open-meteo.com{lat}&longitude={lon}&hourly=temperature_2m,rain,wind_speed_10m,wind_gusts_10m,wind_direction_10m&wind_speed_unit=kmh&forecast_days=2"
+    url = f"https://open-meteo.com{lat}&longitude={lon}&hourly=temperature_2m,rain,wind_speed_10m,wind_gusts_10m,wind_direction_10m&wind_speed_unit=kmh&forecast_days=2"
     return requests.get(url).json()['hourly']
 
 # --- RENDER TAB SELECTION INTERFACE ---
